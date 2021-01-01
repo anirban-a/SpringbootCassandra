@@ -13,9 +13,10 @@ import java.util.logging.Logger;
 @Configuration
 public class CassandraConfiguration {
     Logger logger = Logger.getLogger(this.getClass().getName());
+
     @Bean
-    @Qualifier("customCqlSession")
-    public CqlSession getCqlSession(){
+    @Qualifier ("customCqlSession")
+    public CqlSession getCqlSession() {
         logger.log(Level.INFO, "attempting to create CQL session");
         CqlSession cqlSession = null;
         final InetSocketAddress contactPoint = new InetSocketAddress("localhost", 9042);
